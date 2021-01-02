@@ -1,8 +1,14 @@
 import React from 'react';
-import {Text, View, StatusBar, Image, StyleSheet} from 'react-native';
+import {
+  SafeAreaView,
+  Text,
+  View,
+  StatusBar,
+  Image,
+  StyleSheet,
+} from 'react-native';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import colors from '../assets/colors/colors';
-import LinearGradient from 'react-native-linear-gradient';
 
 const data = [
   {
@@ -38,11 +44,9 @@ const Onboard = (props) => {
 
   const renderDoneButton = () => {
     return (
-      <LinearGradient
-        colors={['#4c669f', '#3b5998', '#192f6a']}
-        style={styles.doneButtonWrapper}>
-        <Text style={styles.doneButtonText}>Sign in with Facebook</Text>
-      </LinearGradient>
+      <View style={styles.rightTextWrapper}>
+        <Text style={styles.rightText}>Done</Text>
+      </View>
     );
   };
   const renderNextButton = () => {
@@ -137,20 +141,6 @@ const styles = StyleSheet.create({
   },
   activeDotStyle: {
     backgroundColor: colors.blue,
-  },
-  doneButtonWrapper: {
-    flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderRadius: 5,
-  },
-  doneButtonText: {
-    fontSize: 18,
-    fontFamily: 'Gill Sans',
-    textAlign: 'center',
-    margin: 10,
-    color: '#ffffff',
-    backgroundColor: 'transparent',
   },
 });
 
